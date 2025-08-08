@@ -1,17 +1,20 @@
 <?php 
 namespace App;
 
+use App\Factory\RepositoryFactory;
+use App\Factory\ServiceFactory;
+use App\Repository\Array\CategorieRepositoryArray as ArrayCategorieRepositoryArray;
 use App\Views\CategorieView;
 use App\Services\CategorieService;
-use App\Repository\CategorieRepository;
+
 
 class Main {
     private  CategorieView $categorieView ;
     private CategorieService $categorieService;
 
     public function __construct() {
-        $categorieRepository = new CategorieRepository();
-        $this->categorieService = new CategorieService($categorieRepository);
+        
+        $this->categorieService = ServiceFactory::createService('categorie');
         $this->categorieView = new CategorieView();
     }
 

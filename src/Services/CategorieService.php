@@ -2,7 +2,7 @@
 namespace   App\Services;
 
 use App\Entity\Categorie;
-use App\Entity\ArticleVente;
+
 use App\Repository\CategorieRepository;
 
 class CategorieService {
